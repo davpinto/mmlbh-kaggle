@@ -6,7 +6,7 @@ March 31, 2017
 Introduction
 ------------
 
-In this kernel we will use `tidyverse` to validade some popular hypothesis about bias in income. Then we will fit some machine learning models to get more accurated answers.
+In this kernel we will use `tidyverse` to validate some popular hypothesis about bias in income. Then we will fit some machine learning models to get more accurate answers.
 
 Some analyses presented here were took from the book [Mastering Python for Data Science](https://www.amazon.com/Mastering-Python-Science-Samir-Madhavan/dp/1784390151).
 
@@ -582,7 +582,7 @@ cv.out$cv_table
 
 -   The base models can be trained in parallel.
 
--   Allow to rank features.
+-   Allow ranking the variables.
 
 ``` r
 # Fit Random Forest
@@ -597,6 +597,8 @@ classAccuracy(dataset$income[-tr.idx], rf.pred$predictions)
 ```
 
     ## [1] 0.8360975
+
+Computing variable importance:
 
 ``` r
 # Variable importance
