@@ -136,13 +136,167 @@ background-position: center middle
 ]
 
 ???
-Você pode participar de competições e analisar bases de dados diversas, compartilhar análises e participar de discussões a respeito das suas soluções e dos demais membros da comunidade. Na plataforma você será desafiado, poderá repetir as práticas, receberá feedbacks e poderá discutir suas soluções. Ao mesmo tempo, o leaderboard dos desafios é uma forma de feedback muito boa. A plataforma utiliza prêmios em dinheiro e técnicas de gamificação para tornar a prática divertida.
+Você pode participar de competições e analisar bases de dados diversas, compartilhar análises e participar de discussões a respeito das suas soluções e dos demais membros da comunidade. Na plataforma você será desafiado, poderá repetir as práticas, receberá feedbacks e poderá discutir suas soluções. Ao mesmo tempo, o leaderboard dos desafios é uma forma de feedback muito boa. A plataforma utiliza prêmios em dinheiro e técnicas de gamificação para tornar a prática muito mais instigante e divertida.
+
+---
+class: top, left
+background-image: url(./img/kaggle-logo.png)
+background-size: 20%
+background-position: 90% 90%
+
+# O que é e como funciona?
+
+[Kaggle](www.kaggle.com) é a maior comunidade de cientistas de dados do mundo, os quais competem através de uma plataforma *online* com o objetivo de solucionar problemas complexos de *Data Science*. As competições são geralmente vinculadas a grandes empresas, que fornecem dados de seus processos e desafiam os competidores a solucionarem problemas associados ao seu *business*, premiando as melhores soluções.
 
 ---
 background-image: url(./img/kaggle-profile.png)
 background-size: 60%
 background-position: center middle
+
 # Meu Perfil
+
+---
+class: center
+background-image: url(./img/otto-group.png)
+background-size: 70%
+background-position: 50% 76%
+
+# Minha Primeira Competição
+![](./img/my-ranking.png)
+
+???
+Na época eu estava no mestrado. Estava buscando novas bases de dados para testar meus algoritmos. Rodei vários modelos que eu conhecia, e não entendia porque minha performance não ficava próxima às dos melhores colocados. A partir de então passei a estudar mais soluções vencedoras e a ler os fórums de algumas competições. Aprendi muito! Mas que no meu mestrado e mais que nos livros.
+
+---
+class: top, left
+background-image: url(./img/otto-winner.png)
+background-size: 80%
+background-position: center 60%
+
+# Solução Vencedora
+
+Link: [Otto Group Winner](https://www.kaggle.com/c/otto-group-product-classification-challenge/forums/t/14335/1st-place-winner-solution-gilberto-titericz-stanislav-semenov)
+
+???
+Foi vencida por um brasileiro. Comentar sobre a combinação de modelos e a geração de novas features. Analisar alguns comentários dos demais competidores.
+
+---
+
+# O que mais aprendi?
+
+- Geração de novas *features* usando o modelo KNN. Na tentativa de reproduzir a solução, acabei obtendo *insights* para criar a biblioteca [fastknn](https://davpinto.github.io/fastknn/), que hoje está disponível na plataforma.
+
+- Combinação de modelos usando *Stacking*. Demorei um tempo pra entender como funcionava de fato. Aprendi tentando reproduzir e criei um tutorial que mostra todos os passos: [Stacking usando H2O.ai](https://davpinto.github.io/h2o-tutorial). O código está disponível no meu [GitHub](https://github.com/davpinto/h2o-tutorial).
+
+---
+
+# Dicas para subir no ranking
+
+### Feature Engineering
+
+- Tratamento de variáveis esparsas (muitos zeros)
+
+- Tratamento de variáveis nominais com muitas categorias
+
+- Remoção de variáveis com baixa variabilidade
+
+- Remoção de variáveis com multicolinearidade
+
+- Tratamento de *missing values* (Decision Tree Imputation, KNN, MICE)
+
+- Transformação de variáveis (log, sqrt, Box-Cox, binning)
+
+- Seleção de características (Regularização L1, Ensemble Trees, Boruta)
+
+- Extração de caracteríticas (MDS, PCA, GLRM, t-SNE, Autoencoder)
+
+---
+
+# Dicas para subir no ranking
+
+### Ajuste de Parâmetros (*Hyperparameter Optimization*)
+
+- Grid Search
+
+- Random Search (Bergstra and Bengio 2012)
+
+- Bayes Optimization
+
+---
+
+# Dicas para subir no ranking
+
+### Combinação de Modelos
+
+- Bagging and Boosting
+
+- Voting e Weighted Voting
+
+- Blending (Average e Weighted Average)
+
+- Stacking (geração de *metafeatures* para combinação de modelos)
+
+---
+
+# Bibliotecas mais utilizadas e wrappers para R
+
+- **Sofia-ML** (C/C++): pacote `RSofia`. SVM linear. Projeto Google.
+
+- **Vowpal Wabbit** (VW) (C/C++): pacote `RVowpalWabbit`. Algoritmos de classificação e regressão altamente eficientes. Projeto Microsoft/Yahoo!.
+
+- **H2O.ai** (Java): pacote `h2o`. Algortimos diversos: Naive-Bayes, GLM, RF, GBM, DL e GLRM.
+
+- **ExtraTrees** (Java): pacote `extraTrees`. Comitês de árvores de decisão.
+
+- **XGBoost** (C/C++): pacote `xgboost`. Gradient Boosting Machines com modelos de regressão linear e árvores de decisão.
+
+- **MXNet** (C/C++): pacote `mxnet`. Todos os modelos de Deep Learning (redes feedforward, convolucionais e recorrentes)
+
+---
+count: false
+class: inverse, center
+background-image: url(./img/kaggle-datasets.png)
+background-size: 75%
+background-position: center middle
+
+# Kaggle Datasets
+
+---
+
+# Kaggle Datasets
+
+No ano passado o site foi reestruturado e passou a rankear os competidores não só pelo desempenho nas competições, mas também pontuando participações nos fóruns e compartilhamento de scripts. A pontuação dos dois últimos quesitos é dada pelo número de *upvotes* que uma resposta ou script recebe dos demais competidores.
+
+Você pode compartilhar *scripts* (*kernels*) dentro de uma competição ou para um **Kaggle Dataset**. Qualquer usuário do site pode criar um *dataset*, e todos os datasets ficam disponíveis para os demais. Uma ótima forma de treinar tanto as técnicas de *machine learning* como seus skills de comunicação é criando *kernels* para diferentes *datasets*.
+
+---
+background-image: url(./img/adult-dataset.png)
+background-size: 75%
+background-position: center middle
+
+# Vamos praticar?
+
+.footnote[
+------
+
+Link: [Adult dataset](https://www.kaggle.com/uciml/adult-census-income)
+]
+
+---
+
+# Sugestões para próximos *hands on*
+
+- Discutir um dataset por evento abordando uma teoria diferente de ML
+
+- Entender as técnicas de combinação de modelos
+
+- Usando gráficos animados para entender algoritmos de ML
+
+- Fazer demonstrações com as bibliotecas mais famosas de ML
+
+- Criação de uma competição no Kaggle entre os membros do Meetup
+
+### Vote no Slack do Meetup
 
 ---
 count: false
