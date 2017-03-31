@@ -177,7 +177,8 @@ dplyr::glimpse(adult)</code></pre>
 <div id="select-variables" class="section level3">
 <h3>Select Variables</h3>
 <p>Let’s remove meaningless variables:</p>
-<pre class="r"><code>dataset &lt;- dplyr::select(adult, -fnlwgt, -capital.gain, -capital.loss)</code></pre>
+<pre class="r"><code>dataset &lt;- dplyr::select(adult, -fnlwgt, -education.num,
+                         -capital.gain, -capital.loss)</code></pre>
 </div>
 <div id="transform-variables" class="section level3">
 <h3>Transform Variables</h3>
@@ -538,128 +539,93 @@ cv.out &lt;- fastknnCV(x[tr.idx,], y[tr.idx], k = seq(from = 10, to = 30, by = 5
                     method = &quot;vote&quot;, normalize = &quot;robust&quot;, 
                     folds = 10, nthread = 8)
 cv.out$cv_table</code></pre>
-<table style="width:100%;">
-<caption>Table continues below</caption>
-<colgroup>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-</colgroup>
+<table>
 <thead>
 <tr class="header">
-<th align="center">fold_1</th>
-<th align="center">fold_2</th>
-<th align="center">fold_3</th>
-<th align="center">fold_4</th>
-<th align="center">fold_5</th>
-<th align="center">fold_6</th>
-<th align="center">fold_7</th>
-<th align="center">fold_8</th>
-<th align="center">fold_9</th>
+<th align="right">fold_1</th>
+<th align="right">fold_2</th>
+<th align="right">fold_3</th>
+<th align="right">fold_4</th>
+<th align="right">fold_5</th>
+<th align="right">fold_6</th>
+<th align="right">fold_7</th>
+<th align="right">fold_8</th>
+<th align="right">fold_9</th>
+<th align="right">fold_10</th>
+<th align="right">mean</th>
+<th align="right">k</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">0.1746</td>
-<td align="center">0.172</td>
-<td align="center">0.1847</td>
-<td align="center">0.1706</td>
-<td align="center">0.1637</td>
-<td align="center">0.162</td>
-<td align="center">0.1741</td>
-<td align="center">0.1724</td>
-<td align="center">0.165</td>
+<td align="right">0.175</td>
+<td align="right">0.172</td>
+<td align="right">0.185</td>
+<td align="right">0.171</td>
+<td align="right">0.164</td>
+<td align="right">0.162</td>
+<td align="right">0.174</td>
+<td align="right">0.172</td>
+<td align="right">0.165</td>
+<td align="right">0.170</td>
+<td align="right">0.171</td>
+<td align="right">10</td>
 </tr>
 <tr class="even">
-<td align="center">0.1776</td>
-<td align="center">0.1733</td>
-<td align="center">0.1808</td>
-<td align="center">0.1715</td>
-<td align="center">0.1597</td>
-<td align="center">0.1629</td>
-<td align="center">0.1715</td>
-<td align="center">0.1689</td>
-<td align="center">0.1588</td>
+<td align="right">0.178</td>
+<td align="right">0.173</td>
+<td align="right">0.181</td>
+<td align="right">0.171</td>
+<td align="right">0.160</td>
+<td align="right">0.163</td>
+<td align="right">0.171</td>
+<td align="right">0.169</td>
+<td align="right">0.159</td>
+<td align="right">0.161</td>
+<td align="right">0.169</td>
+<td align="right">15</td>
 </tr>
 <tr class="odd">
-<td align="center">0.1768</td>
-<td align="center">0.1667</td>
-<td align="center">0.1768</td>
-<td align="center">0.1645</td>
-<td align="center">0.1637</td>
-<td align="center">0.1642</td>
-<td align="center">0.1675</td>
-<td align="center">0.1685</td>
-<td align="center">0.1593</td>
+<td align="right">0.177</td>
+<td align="right">0.167</td>
+<td align="right">0.177</td>
+<td align="right">0.164</td>
+<td align="right">0.164</td>
+<td align="right">0.164</td>
+<td align="right">0.168</td>
+<td align="right">0.168</td>
+<td align="right">0.159</td>
+<td align="right">0.167</td>
+<td align="right">0.168</td>
+<td align="right">20</td>
 </tr>
 <tr class="even">
-<td align="center">0.1759</td>
-<td align="center">0.1685</td>
-<td align="center">0.1834</td>
-<td align="center">0.1632</td>
-<td align="center">0.1654</td>
-<td align="center">0.1598</td>
-<td align="center">0.1675</td>
-<td align="center">0.172</td>
-<td align="center">0.1615</td>
+<td align="right">0.176</td>
+<td align="right">0.168</td>
+<td align="right">0.183</td>
+<td align="right">0.163</td>
+<td align="right">0.165</td>
+<td align="right">0.160</td>
+<td align="right">0.168</td>
+<td align="right">0.172</td>
+<td align="right">0.161</td>
+<td align="right">0.162</td>
+<td align="right">0.168</td>
+<td align="right">25</td>
 </tr>
 <tr class="odd">
-<td align="center">0.1741</td>
-<td align="center">0.1694</td>
-<td align="center">0.1795</td>
-<td align="center">0.1654</td>
-<td align="center">0.1685</td>
-<td align="center">0.1624</td>
-<td align="center">0.1632</td>
-<td align="center">0.1716</td>
-<td align="center">0.1553</td>
-</tr>
-</tbody>
-</table>
-<table style="width:28%;">
-<colgroup>
-<col width="13%"></col>
-<col width="9%"></col>
-<col width="4%"></col>
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">fold_10</th>
-<th align="center">mean</th>
-<th align="center">k</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">0.1697</td>
-<td align="center">0.1709</td>
-<td align="center">10</td>
-</tr>
-<tr class="even">
-<td align="center">0.161</td>
-<td align="center">0.1686</td>
-<td align="center">15</td>
-</tr>
-<tr class="odd">
-<td align="center">0.1671</td>
-<td align="center">0.1675</td>
-<td align="center">20</td>
-</tr>
-<tr class="even">
-<td align="center">0.1623</td>
-<td align="center">0.1679</td>
-<td align="center">25</td>
-</tr>
-<tr class="odd">
-<td align="center">0.1632</td>
-<td align="center">0.1672</td>
-<td align="center">30</td>
+<td align="right">0.174</td>
+<td align="right">0.169</td>
+<td align="right">0.179</td>
+<td align="right">0.165</td>
+<td align="right">0.168</td>
+<td align="right">0.162</td>
+<td align="right">0.163</td>
+<td align="right">0.172</td>
+<td align="right">0.155</td>
+<td align="right">0.163</td>
+<td align="right">0.167</td>
+<td align="right">30</td>
 </tr>
 </tbody>
 </table>
@@ -686,61 +652,57 @@ var.imp &lt;- ranger::importance(rf.model)
 var.imp &lt;- dplyr::data_frame(variable = names(var.imp), importance = var.imp) %&gt;% 
    dplyr::arrange(desc(importance))
 var.imp</code></pre>
-<table style="width:38%;">
-<colgroup>
-<col width="20%"></col>
-<col width="16%"></col>
-</colgroup>
+<table>
 <thead>
 <tr class="header">
-<th align="center">variable</th>
-<th align="center">importance</th>
+<th align="left">variable</th>
+<th align="right">importance</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">age</td>
-<td align="center">715.01437</td>
+<td align="left">relationship</td>
+<td align="right">843.884</td>
 </tr>
 <tr class="even">
-<td align="center">workclass</td>
-<td align="center">189.64968</td>
+<td align="left">education.num</td>
+<td align="right">778.964</td>
 </tr>
 <tr class="odd">
-<td align="center">education</td>
-<td align="center">286.07057</td>
+<td align="left">age</td>
+<td align="right">715.014</td>
 </tr>
 <tr class="even">
-<td align="center">education.num</td>
-<td align="center">778.96357</td>
+<td align="left">marital.status</td>
+<td align="right">641.721</td>
 </tr>
 <tr class="odd">
-<td align="center">marital.status</td>
-<td align="center">641.72079</td>
+<td align="left">hours.per.week</td>
+<td align="right">476.212</td>
 </tr>
 <tr class="even">
-<td align="center">occupation</td>
-<td align="center">334.78726</td>
+<td align="left">occupation</td>
+<td align="right">334.787</td>
 </tr>
 <tr class="odd">
-<td align="center">relationship</td>
-<td align="center">843.88364</td>
+<td align="left">education</td>
+<td align="right">286.071</td>
 </tr>
 <tr class="even">
-<td align="center">race</td>
-<td align="center">80.24161</td>
+<td align="left">workclass</td>
+<td align="right">189.650</td>
 </tr>
 <tr class="odd">
-<td align="center">sex</td>
-<td align="center">140.88538</td>
+<td align="left">sex</td>
+<td align="right">140.885</td>
 </tr>
 <tr class="even">
-<td align="center">hours.per.week</td>
-<td align="center">476.21189</td>
+<td align="left">native.country</td>
+<td align="right">93.733</td>
 </tr>
 <tr class="odd">
-<td align="center">native.country</td>
-<td align="center">93.73253</td>
+<td align="left">race</td>
+<td align="right">80.242</td>
 </tr>
 </tbody>
 </table>

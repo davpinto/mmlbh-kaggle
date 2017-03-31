@@ -61,7 +61,8 @@ So, we have an **imbalanced classification** dataset.
 Let's remove meaningless variables:
 
 ```{r}
-dataset <- dplyr::select(adult, -fnlwgt, -capital.gain, -capital.loss)
+dataset <- dplyr::select(adult, -fnlwgt, -education.num,
+                         -capital.gain, -capital.loss)
 ```
 
 ### Transform Variables
@@ -365,7 +366,7 @@ cv.out$cv_table
 ```
 
 ```{r, echo=FALSE}
-pander::pander(cv.out$cv_table)
+knitr::kable(cv.out$cv_table, digits = 3)
 ```
 
 ### Random Forest
@@ -397,5 +398,5 @@ var.imp
 ```
 
 ```{r, echo=FALSE}
-pander::pander(var.imp)
+knitr::kable(var.imp, digits = 3)
 ```
