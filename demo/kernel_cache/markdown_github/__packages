@@ -1,0 +1,12 @@
+base
+readr
+magrittr
+tidyr
+dplyr
+purrr
+ggplot2
+lattice
+caret
+fastknn
+ranger
+rpart

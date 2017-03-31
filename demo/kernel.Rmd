@@ -3,9 +3,8 @@ title: "Validating some Beliefs about Income Bias"
 author: "David Pinto"
 date: "March 31, 2017"
 output: 
-   html_document: 
-     keep_md: yes
-     theme: cosmo
+   github_document: default
+   html_document: default
 ---
 
 ```{r setup, include=FALSE}
