@@ -8,3 +8,5 @@ lattice
 caret
 fastknn
 ranger
+magrittr
+rpart

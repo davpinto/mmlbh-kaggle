@@ -89,7 +89,8 @@ cv.out$cv_table
 cv.out$best_k
 
 ## Fit Random Forest
-rf.model <- ranger(income ~ ., dataset[tr.idx,], num.trees = 500, mtry = 2, 
+rf.model <- ranger(income ~ ., dataset[tr.idx,], num.trees = 500, mtry = 2, importance = "impurity",
                    num.threads = 8)
 rf.pred <- predict(rf.model, dataset[-tr.idx,])
 classAccuracy(dataset$income[-tr.idx], rf.pred$predictions)
+sort(ranger::importance(rf.model))
